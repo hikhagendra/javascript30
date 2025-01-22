@@ -26,7 +26,7 @@ function highlighter(elem) {
         if(key == elem) {
             key.classList.add('playing');
 
-            windowdff.onkeyup = function() {
+            window.onkeyup = function() {
                 key.classList.remove('playing');
             }
         } else {
