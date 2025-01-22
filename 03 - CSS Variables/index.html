@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
-  <link rel="icon" href="https://fav.farm/✅" />
+  <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
@@ -19,28 +19,15 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img src="https://images.unsplash.com/photo-1737047119483-1ddb4cb13540?q=100&w=1000">
 
   <style>
+
     :root {
-      --base: #ffc600;
       --spacing: 10px;
+      --color: #ffc600;
       --blur: 10px;
     }
-
-    img {
-      padding: var(--spacing);
-      background: var(--base);
-      filter: blur(var(--blur));
-    }
-
-    .hl {
-      color: var(--base);
-    }
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
 
     body {
       text-align: center;
@@ -58,20 +45,18 @@
     input {
       width: 100px;
     }
-  </style>
 
-  <script>
-    const inputs = document.querySelectorAll('.controls input');
-
-    function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    img {
+      border: var(--spacing) solid var(--color);
+      filter: blur(var(--blur));
     }
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-  </script>
+    .hl {
+      color: var(--color);
+    }
+  </style>
 
+  <script src="script.js"></script>
 
 </body>
 </html>
