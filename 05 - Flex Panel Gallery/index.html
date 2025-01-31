@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Flex Panels 💪</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="https://fav.farm/✅" />
+  <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
   <style>
@@ -28,6 +28,7 @@
       min-height: 100vh;
       overflow: hidden;
       display: flex;
+      align-items: stretch;
     }
 
     .panel {
@@ -35,7 +36,6 @@
       box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
       color: white;
       text-align: center;
-      align-items: center;
       /* Safari transitionend event.propertyName === flex */
       /* Chrome + FF transitionend event.propertyName === flex-grow */
       transition:
@@ -45,39 +45,39 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
-      flex: 1;
-      justify-content: center;
+      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
+      justify-content: space-around;
     }
 
-    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
+    .panel1 { background-image:url(https://images.unsplash.com/photo-1737117752650-06205a6394c4?q=80&w=1000); }
+    .panel2 { background-image:url(https://images.unsplash.com/photo-1737452179413-827ba5c0986d?q=80&w=1000); }
     .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+    .panel4 { background-image:url(https://images.unsplash.com/photo-1734613876170-079f67aa0d15?q=80&w=1000); }
+    .panel5 { background-image:url(https://images.unsplash.com/photo-1736687107097-0022360964fb?q=80&w=1000); }
 
-    /* Flex Items */
+    /* Flex Children */
     .panel > * {
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
-      flex: 1 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
-
-    .panel > *:first-child { transform: translateY(-100%); }
-    .panel.open-active > *:first-child { transform: translateY(0); }
-    .panel > *:last-child { transform: translateY(100%); }
-    .panel.open-active > *:last-child { transform: translateY(0); }
 
     .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 2em;
+      transition: margin 0.4s linear;
+    }
+
+    .panel p:first-child {
+      margin-top: -500px;
+    }
+
+    .panel p:last-child {
+      margin-bottom: -500px;
     }
 
     .panel p:nth-child(2) {
@@ -85,19 +85,14 @@
     }
 
     .panel.open {
-      flex: 5;
       font-size: 40px;
+      flex: 10 0 min-content;
     }
 
-    @media only screen and (max-width: 600px) {
-      .panel p {
-        font-size: 1em;
-      }
-    }
   </style>
 
 
-  <div class="panels">
+  <div class="panels" id="panels">
     <div class="panel panel1">
       <p>Hey</p>
       <p>Let's</p>
@@ -125,24 +120,6 @@
     </div>
   </div>
 
-  <script>
-    const panels = document.querySelectorAll('.panel');
-
-    function toggleOpen() {
-      console.log('Hello');
-      this.classList.toggle('open');
-    }
-
-    function toggleActive(e) {
-      console.log(e.propertyName);
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
-      }
-    }
-
-    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
-  </script>
-
+  <script src="main.js"></script>
 </body>
 </html>
