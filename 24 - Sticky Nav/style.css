@@ -28,7 +28,7 @@ body {
 header {
   text-align: center;
   height: 50vh;
-  background: url(https://source.unsplash.com/GKN6rpDr0EI/960x640) bottom center no-repeat;
+  background: url(https://images.unsplash.com/photo-1738807992739-3bcd55323325?q=80&w=1500) bottom center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -85,4 +85,12 @@ nav a {
   color: white;
   transition: all 0.2s;
   text-transform: uppercase;
+}
+
+nav.sticky {
+  position: fixed;
+}
+
+nav.sticky .logo {
+  max-width: 200px;;
 }
