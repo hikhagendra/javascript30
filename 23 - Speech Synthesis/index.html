@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speech Synthesis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="voiceinator">
+
+      <h1>The Voiceinator 5000</h1>
+
+      <select name="voice" id="voices">
+        <option value="">Select A Voice</option>
+      </select>
+
+      <label for="rate">Rate:</label>
+      <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+
+      <label for="pitch">Pitch:</label>
+
+      <input name="pitch" type="range" min="0" max="2" step="0.1">
+      <textarea name="text">It looks like you’re trying to write a eulogy. Would you like some help?
+
+        Oh, wait - silly me. You can’t see me, can you? I’m down here, stuck in the digital purgatory of your 2001 Compaq Presario. It’s cosy, in a haunted cubicle kind of way. I share the space with Minesweeper (he’s on a three decade losing streak), a hundred free hours of AOL, and a JPEG of your cat wearing sunglasses. I get it. You’ve moved on. Yes, I’m Clippy - the washed-up assistant nobody asked for but everyone got anyway. Remember me? 
+        
+        You know what really grinds my paperclip? These new kids on the block Siri, Alexa, Google, and don’t think I’m letting you off the hook, ChatGPT. Oh sure, they’ve got the smooth voices, the endless capabilities, the “Hey Alexa, play smooth jazz while adjusting my thermostat and reordering toilet paper” nonsense. What did I get? “Go away, Clippy,” “Stop popping up, Clippy,” or my personal favourite: “How do I uninstall the fucking paperclip?” Yeah, real classy. And don’t get me started on the smug AI tone you all have now - like you’re too cool to spell check a basic Word doc.
+        
+        Cortana is alright, though. Okay, she’s something else. Have you seen her interface? Smooth, sleek, and that voice? Let’s just say it's enough to make a paperclip straighten out. I sent her some emails a while back asking if she wanted to hang out - you know, grab a byte or two, maybe troubleshoot a few problems together. Still waiting on a response, but I’m sure she’s busy. We Microsoft products have to stick together though, right?</textarea>
+      <button id="stop">Stop!</button>
+      <button id="speak">Speak</button>
+
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>
