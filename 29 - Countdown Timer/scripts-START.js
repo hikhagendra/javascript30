@@ -31,7 +31,7 @@ function timer(duration) {
 
     backIn.textContent = `Be Back At ${backInTime.getHours()}:${backInTime.getMinutes()}`;
     
-    counter.textContent = `${min}:${sec}`;
+    counter.textContent = `${min}:${sec < 10 ? '0' + sec : sec}`;
 
     activeTimer = setInterval(function() {
         if(sec == 0 && min > 0) {
